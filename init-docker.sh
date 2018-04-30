@@ -1,3 +1,5 @@
+#使用ubuntu 16.04
+
 #! /bin/bash
 sudo apt-get remove docker docker-engine docker.io
 sudo apt-get update
