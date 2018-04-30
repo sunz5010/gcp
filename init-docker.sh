@@ -23,3 +23,6 @@ sudo apt-get install -y docker-ce
 sed -i "s/ExecStart=\/usr\/bin\/dockerd -H fd:\/\//ExecStart=\/usr\/bin\/dockerd -H fd:\/\/ -H tcp:\/\/0.0.0.0:2375/g" /lib/systemd/system/docker.service
 systemctl daemon-reload
 service docker restart
+
+#更改一下timezone
+sudo timedatectl set-timezone Asia/Taipei
