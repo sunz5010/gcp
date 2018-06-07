@@ -1,0 +1,15 @@
+#!/bin/bash
+#reference: https://gist.github.com/matthewflanneryaustralia/37001f99dddcfa486dc637607a2b3990
+cat > /tmp/init.sh << EOF
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+. /home/docker-user/.nvm/nvm.sh
+. /home/docker-user/.bashrc
+
+nvm alias default stable
+nvm install stable
+npm install -g pm2
+
+mkdir /home/ubuntu/www
+EOF
+chown ubuntu:ubuntu /tmp/init.sh && chmod a+x /tmp/init.sh
+sleep 1; su - ubuntu -c "/tmp/init.sh > /tmp/init.log"
