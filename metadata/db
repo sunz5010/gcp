@@ -1,0 +1,10 @@
+#!/bin/bash
+mkdir -p /var/cache/swap/
+dd if=/dev/zero of=/var/cache/swap/swap0 bs=1M count=2048
+chmod 0600 /var/cache/swap/swap0
+mkswap /var/cache/swap/swap0 
+swapon /var/cache/swap/swap0
+echo "/var/cache/swap/swap0      swap        swap    defaults        0 0" >> /etc/fstab
+
+#change time zone
+timedatectl set-timezone Asia/Taipei
