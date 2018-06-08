@@ -13,3 +13,6 @@ mkdir /home/ubuntu/www
 EOF
 chown ubuntu:ubuntu /tmp/init.sh && chmod a+x /tmp/init.sh
 sleep 1; su - ubuntu -c "/tmp/init.sh > /tmp/init.log"
+
+#change time zone
+timedatectl set-timezone Asia/Taipei
